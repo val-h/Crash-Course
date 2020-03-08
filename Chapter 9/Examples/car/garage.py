@@ -1,5 +1,6 @@
-from essential_functions import update_value, create_car
+from essentials import update_value
 from car import Car
+from electric_car import ElectricCar
 
 words_for_exit = ['q', 'quit', 'exit', 'end', 'stop', 'yamero']
 car_options = ['car', 'electric car']
@@ -26,6 +27,17 @@ def openning_message():
     print('\n Welcome to my simple car project! Take your time and explore.')
     print('Since you don\'t have a car you will have to create one...')
     available_cars()
+
+def create_car(car_type, make, model, year):
+    """
+    Creates the car object for the program depending on the user input.
+    """
+    if car_type == 'car':
+        car = Car(make, model, year)
+    elif car_type == 'electric car':
+        car = ElectricCar(make, model, year)
+    print(f'\n{car_type.title()} {make.title()} was successfuly created!')
+    return car
     
 def command_exe(cmd):
     """
@@ -68,7 +80,7 @@ def command_exe(cmd):
             print(f'\nError! {cmd} is not a valid command.')
             print('Type \'help\' for a list of commands.')
         else:
-            print(f'{cmd} is not a valid for \'{car_type}\'.')
+            print(f'{cmd} is not a valid command  for \'{car_type}\'.')
 
 def help():
     print('\nThis is a list with all the available commands:')
@@ -104,6 +116,7 @@ print('\nYou can now work with the car\'s parameters and information')
 
 # User commands loop
 while True:
+    
     # User inp
     cmd = input(prompt).lower()
 

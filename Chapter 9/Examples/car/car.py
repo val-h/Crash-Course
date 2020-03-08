@@ -1,4 +1,4 @@
-from essential_functions import update_value
+from essentials import update_value
 
 """A class that can be used to represent a car."""
 
