@@ -3,7 +3,8 @@ car_options = ['car', 'electric car']
 prompt = '\n/> '    # an extra line of code
 
 # Add new commands as the project grows
-commands = ['name', 'r_odo', 'u_odo', 'i_odo', 'battery', 'range', 'help']
+commands = ['name', 'r_odo', 'u_odo', 'i_odo', 'battery', 'range', 'r_bl', 'u_bl']
+other_commands = ['help']
 
 # Classes
 class Car:
@@ -56,16 +57,43 @@ class Battery:
     def __init__(self, battery_size=75):
 
         self.battery_size = battery_size
+        self.power_level = 100.0    # % value
 
     # Doesn't work properly, fix later
     def describe_battery(self):
         """Give back a descriptive info about the battery of the car."""
         print(f'This car has a {self.battery_size}-kWh battery size.')
+        self.power_level -= 7
     
     def get_range(self):
         """Prints the Kilometers that the car object can travel."""
         km_range = self.battery_size * 3.5 / 0.62
+        current_range = km_range * self.power_level / 100
         print(f'This car can go about {km_range:.2f}km on a full cahrge.')
+        print(f'\nThe current range of the car is {current_range:.2f}km.')
+        self.power_level -= 4
+        
+    def read_battery(self):
+        """Prints the current power level of the battery."""
+        print(f'The car is {self.power_level:.1f}% charged')
+    
+    def update_battery(self):
+        """Updates the power_level of the battery. Max 100%"""
+        if self.power_level == 100:
+            print(f'The battery is already on a 100% charge!')
+        else:
+            battery_charge = 0
+            while battery_charge == 0:
+                battery_charge = update_value('battery charge')
+                if battery_charge + self.power_level > 100:
+                    overcharge = abs(battery_charge - (100 - self.power_level))
+                    self.power_level = 100
+                else:
+                    self.power_level += battery_charge
+                if overcharge:
+                    print(f'Overcharge: {overcharge:.1f}%')
+                    self.read_battery()
+        self.power_level -= 1
 
 class ElectricCar(Car):
     """
@@ -106,12 +134,14 @@ def create_car(car_type, make, model, year):
         car = Car(make, model, year)
     elif car_type == 'electric car':
         car = ElectricCar(make, model, year)
-    print(f'{car_type.title()} was successfuly created!')
+    print(f'\n{car_type.title()} {make.title()} was successfuly created!')
     return car
 
 def update_value(value_name):
     """
     Asks the user for a positive value until it gets one.
+    Requires a string parameter for the input message in format:
+            Value for {value_name}: 
     """
     while True:
         try:
@@ -126,9 +156,54 @@ def update_value(value_name):
                 break
     return temp_value
 
+def command_exe(cmd):
+    """
+    A more organised way for the command excutions.
+    Takes one 'command input' and checks it with the
+    available commands.
+    """
+    if cmd in words_for_exit:
+        print('Program shutting down...')
+        quit()
+
+    # General car commands
+    if cmd == 'name':
+        print(my_car.descriptive_name())
+    elif cmd == 'r_odo':
+        my_car.read_odometer()
+    elif cmd == 'u_odo':
+        my_car.update_odometer()
+    elif cmd == 'i_odo':
+        my_car.increment_odometer()
+    
+    # Electric car commands
+    elif cmd in commands and car_type == 'electric car':
+        if cmd == 'battery':
+            my_car.battery.describe_battery()
+        elif cmd == 'range':
+            my_car.battery.get_range()
+        elif cmd == 'r_bl':
+            my_car.battery.read_battery()
+        elif cmd == 'u_bl':
+            my_car.battery.update_battery()
+    
+    # Other commands
+    elif cmd == 'help':
+        help()
+    
+    # Error message
+    else:
+        if cmd not in commands and cmd not in other_commands:
+            print(f'\nError! {cmd} is not a valid command.')
+            print('Type \'help\' for a list of commands.')
+        else:
+            print(f'{cmd} is not a valid for \'{car_type}\'.')
+
 def help():
     print('\nThis is a list with all the available commands:')
     for command in commands:
+        print(f' - {command}')
+    for command in other_commands:
         print(f' - {command}')
 
 #
@@ -159,28 +234,6 @@ print('\nYou can now work with the car\'s parameters and information')
 while True:
     # User inp
     cmd = input(prompt).lower()
-    if cmd in words_for_exit:
-        print('Program shutting down...')
-        quit()
 
-    if cmd == 'name':
-        print(my_car.descriptive_name())
-    elif cmd == 'r_odo':
-        my_car.read_odometer()
-    elif cmd == 'u_odo':
-        my_car.update_odometer()
-    elif cmd == 'i_odo':
-        my_car.increment_odometer()
-    elif cmd in commands and cmd != 'help':
-        if car_type == 'electric car':
-            if cmd == 'battery:':
-                my_car.battery.describe_battery()
-            elif cmd == 'range':
-                my_car.battery.get_range()
-        else:
-            print('This isn\'t an electric car!')
-    elif cmd == 'help':
-        help()
-    else:
-        print(f'Error! {cmd} is not a valid command')
-        print('Type \'help\' for a list of commands')
+    # Command check
+    command_exe(cmd)
