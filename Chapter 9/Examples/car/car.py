@@ -1,4 +1,5 @@
 from essentials import update_value
+from random import randint
 
 """A class that can be used to represent a car."""
 
@@ -8,12 +9,12 @@ class Car:
     and a bit of interaction with functions.
     """
 
-    def __init__(self, make, model, year, odometer=0.0):
+    def __init__(self, make, model, year):
         """Gives the base attributes of a car."""
         self.make = make
         self.model = model
         self.year = year
-        self.odometer = odometer
+        self.odometer = float(randint(0, 10000))
     
     def descriptive_name(self):
         """Returns a descriptive name of the car object."""

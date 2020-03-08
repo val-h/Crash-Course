@@ -1,7 +1,6 @@
 from essentials import update_value
 from car import Car
 
-
 """A set of classes representing Electric car."""
 
 class Battery:
@@ -57,7 +56,7 @@ class ElectricCar(Car):
     Inherits from Car class.
     """
 
-    def __init__(self, make, model, year, odometer=0):
+    def __init__(self, make, model, year):
         """Initialize the attributes  of the parrent class."""
-        super().__init__(make, model, year, odometer)
+        super().__init__(make, model, year)
         self.battery = Battery()
