@@ -14,5 +14,10 @@ class NameTestCase(unittest.TestCase):
         formatted_name = get_formatted_name('wolfgang', 'mozart', 'amadeus')
         self.assertEqual(formatted_name, 'Wolfgang Amadeus Mozart')
 
+    def test_name_with_numbers(self):
+        """Do names that have numbers work"""
+        formatted_name = get_formatted_name('cookie1', 'biscuit2')
+        self.assertEqual(formatted_name, 'Cookie1 Biscuit2')
+
 if __name__ == '__main__':
     unittest.main()
