@@ -3,7 +3,7 @@ import pygame
 class Ship:
     """Creating a ship with functions to manage it."""
 
-    SHIP_SPEED = 0.3
+    SHIP_SPEED = 0.4
 
     def __init__(self, ai_game):
         """Creating the ship and manage its possition."""
