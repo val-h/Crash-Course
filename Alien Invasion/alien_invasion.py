@@ -31,7 +31,7 @@ class AlienInvasion:
         while True:
             self._check_events()
             self.ship.update()
-            self.bullets.update()
+            self._update_bullets()
             self._update_screen()
             
     def _check_events(self):
@@ -49,34 +49,45 @@ class AlienInvasion:
         """Respond to keydown events"""
 
         # Ship movement
-        if event.key == pygame.K_RIGHT:
+        if event.key == self.settings.kb_right:
             self.ship.move_right = True
-        elif event.key == pygame.K_LEFT:
+        elif event.key == self.settings.kb_left:
             self.ship.move_left = True
         
         # Firing bullets
-        if event.key == pygame.K_SPACE:
+        if event.key == self.settings.kb_fire:
             self._fire_bullet()
 
         # Game Interface
-        if event.key == pygame.K_q:
+        if event.key == self.settings.kb_quit:
             print('Quiting Alien Invasion...')
             sys.exit()
     
     def _check_keyup_events(self, event):
         """Respond to keyup events"""
-        if event.key == pygame.K_RIGHT:
+        if event.key == self.settings.kb_right:
             self.ship.move_right = False
-        elif event.key == pygame.K_LEFT:
+        elif event.key == self.settings.kb_left:
             self.ship.move_left = False
     
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group"""
-        new_bullet = Bullet(self)
-        self.bullets.add(new_bullet)
+        if len(self.bullets) < self.settings.max_bullets:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
+
+    def _update_bullets(self):
+        """Updates to the bullets in the game"""
+        # Update the bullets possition
+        self.bullets.update()
+
+        # Getting rid of bullets that had disappeared
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
 
     def _update_screen(self):
-        """Update images to the screen, and flip to the new screen."""
+        """Update images to the screen, and flip to the new screen"""
         # Set the bg_color
         self.screen.fill(self.settings.bg_color)
         self.ship.blitme()
