@@ -29,19 +29,14 @@ pl_y = float(player_rect.y)
 player_rect.midleft = win.get_rect().midleft
 
 # Main Functions
-
-def player_draw():
-    win.blit(player_image, player_rect)
-
-    print(f'Player y - {pl_y}')
-
 def player_update():
+    new_y = float(player_rect.y)
     if pl_move_up == True:
-        pl_y -= player_speed
+        new_y -= player_speed
     elif pl_move_down == True:
-        pl_y += player_speed
-
-    player_rect.y = pl_y
+        new_y += player_speed
+    #Still doesn't work, moving on to the main project
+    player_rect.y = new_y
 
 def _keydown_events(event):
     if event.key == kb_up:
@@ -73,9 +68,8 @@ def _check_events():
 
 def update_win():
     win.fill(screen_bg_color)
-    player_draw()
-    pygame.display.update()
-    pygame.time.delay(100)
+    win.blit(player_image, player_rect)
+    pygame.display.flip()
 
 # Main Loop
 while True:
