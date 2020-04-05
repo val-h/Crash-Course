@@ -28,3 +28,8 @@ class Settings:
 
         # Ship settings
         self.ship_speed = 0.55
+
+        # Alien settings
+        self.alien_speed = 0.3
+        self.fleet_drop_speed = 20
+        self.alien_direction = 1
