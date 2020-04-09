@@ -76,6 +76,9 @@ class AlienInvasion:
         if event.key == self.settings.kb_quit:
             print('Quiting Alien Invasion...')
             sys.exit()
+        
+        if event.key == self.settings.kb_show_stats:
+            self._print_stats()
     
     def _check_keyup_events(self, event):
         """Respond to keyup events"""
@@ -139,7 +142,7 @@ class AlienInvasion:
         """Check the collisions between the bullets and aliens"""
         # Add the aliens and bullets to a group and check if they collide,
         # if so remove the bullet and alien. Posible feature is an explosion
-        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, False, True)
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
 
         # Check if the fleet is destroyed, remove all bullets and spawn a new fleet
         if not self.aliens:
@@ -164,6 +167,9 @@ class AlienInvasion:
         for alien_row in range(row_number):
             for alien_number in range(number_aliens_x):
                 self._create_alien(alien_number, alien_row)
+        
+        # Add to the fleet_count stats
+        self.stats.fleet_count += 1
 
     def _create_alien(self, alien_number, row_number):
         """Create a single alien and place it in the fleet"""
@@ -203,6 +209,13 @@ class AlienInvasion:
 
         # Look for aliens hitting the bottom of the screen
         self._check_aliens_bottom()
+    
+    def _print_stats(self):
+        """Print the game stats of the game"""
+        print(' --- Game Stats --- \n')
+        
+        print(f'{self.stats.ships_left} lives left.')
+        print(f'Level - {self.stats.fleet_count}')
 
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen"""

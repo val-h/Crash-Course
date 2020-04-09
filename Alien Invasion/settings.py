@@ -15,11 +15,12 @@ class Settings:
         self.kb_right = pygame.K_d
         self.kb_left = pygame.K_a
         self.kb_fire = pygame.K_SPACE
+        self.kb_show_stats = pygame.K_s
         self.kb_quit = pygame.K_q
 
         # Bullet settings
         self.bullet_speed = 2.5
-        self.bullet_width = 300
+        self.bullet_width = 4
         self.bullet_height = 15
         self.bullet_color = (160, 60, 60)
         #self.bullet_image = pygame.image.load('Alien Invasion\\images\\ship_missile.png')
@@ -31,6 +32,6 @@ class Settings:
         self.ship_limit = 3
 
         # Alien settings
-        self.alien_speed = 1.5
+        self.alien_speed = 0.3
         self.fleet_drop_speed = 20
         self.alien_direction = 1
