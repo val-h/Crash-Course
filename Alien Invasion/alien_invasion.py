@@ -40,9 +40,12 @@ class AlienInvasion:
         print('Starting the game')
         while True:
             self._check_events()
-            self.ship.update()
-            self._update_aliens()
-            self._update_bullets()
+
+            if self.stats.game_active:
+                self.ship.update()
+                self._update_aliens()
+                self._update_bullets()
+            
             self._update_screen()
             
     def _check_events(self):
@@ -84,24 +87,31 @@ class AlienInvasion:
     def _ship_hit(self):
         """Respond to the ship being hit by aliens"""
         
-        # Decrement the ships left
-        self.settings.ship_limit -= 1
+        if self.stats.ships_left > 0:
+            # Decrement the ships left
+            self.stats.ships_left -= 1
 
-        # Remove all of the bullets and aliens
-        self.aliens.empty()
-        self.bullets.empty()
+            # Remove all of the bullets and aliens
+            self.aliens.empty()
+            self.bullets.empty()
 
-        # Create a new fleet an center the ship
-        self._create_fleet()
-        self.ship.center_ship()
+            # Create a new fleet an center the ship
+            self._create_fleet()
+            self.ship.center_ship()
 
-        # Pause
-        sleep(0.5)
+            # Pause
+            sleep(0.5)
+
+            # Print the lives left
+            print(f'{self.stats.ships_left} lives left.')
+        else:
+            self.stats.game_active = False
+            print('Game Over!')
     
     def _check_aliens_bottom(self):
         """Check if any aliens have reached the bottom of the screen"""
         screen_rect = self.screen.get_rect()
-        for alien in self.aliens.sprites:
+        for alien in self.aliens.sprites():
             if alien.rect.bottom >= screen_rect.bottom:
                 # Treat the case the same way as if the ship got hit
                 self._ship_hit()
