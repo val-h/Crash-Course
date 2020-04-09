@@ -19,7 +19,7 @@ class Settings:
 
         # Bullet settings
         self.bullet_speed = 2.5
-        self.bullet_width = 4
+        self.bullet_width = 300
         self.bullet_height = 15
         self.bullet_color = (160, 60, 60)
         #self.bullet_image = pygame.image.load('Alien Invasion\\images\\ship_missile.png')
@@ -27,9 +27,10 @@ class Settings:
         self.max_bullets = 5 # with the current system it creates a visual error
 
         # Ship settings
-        self.ship_speed = 0.55
+        self.ship_speed = 0.75
+        self.ship_limit = 3
 
         # Alien settings
-        self.alien_speed = 0.3
+        self.alien_speed = 1.5
         self.fleet_drop_speed = 20
         self.alien_direction = 1
