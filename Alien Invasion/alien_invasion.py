@@ -126,6 +126,9 @@ class AlienInvasion:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
 
+            # Add the bullet count to the stats
+            self.stats.shots_fired += 1
+
     def _update_bullets(self):
         """Updates to the bullets in the game"""
         # Update the bullets possition
@@ -214,8 +217,10 @@ class AlienInvasion:
         """Print the game stats of the game"""
         print(' --- Game Stats --- \n')
         
-        print(f'{self.stats.ships_left} lives left.')
         print(f'Level - {self.stats.fleet_count}')
+        print(f'Lives left - {self.stats.ships_left}')
+        print(f'Total shots fired - {self.stats.shots_fired}')
+        #print(f'Total aliens hit - {self.stats.aliens_hit}')
 
     def _update_screen(self):
         """Update images to the screen, and flip to the new screen"""
