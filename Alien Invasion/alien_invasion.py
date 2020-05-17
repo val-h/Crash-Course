@@ -5,6 +5,7 @@ import pygame
 
 from settings import Settings
 from game_stats import GameStats
+from scoreboard import Scoreboard
 from button import Button
 from ship import Ship
 from bullet import Bullet
@@ -27,6 +28,7 @@ class AlienInvasion:
         pygame.display.set_caption('Alien Invasion')
 
         self.stats = GameStats(self)
+        self.sb = Scoreboard(self)
         self.ship = Ship(self)
 
         self.bullets = pygame.sprite.Group()
@@ -138,14 +140,6 @@ class AlienInvasion:
             pygame.mouse.set_visible(True)
             print('Game Over!')
     
-    def _check_aliens_bottom(self):
-        """Check if any aliens have reached the bottom of the screen"""
-        screen_rect = self.screen.get_rect()
-        for alien in self.aliens.sprites():
-            if alien.rect.bottom >= screen_rect.bottom:
-                # Treat the case the same way as if the ship got hit
-                self._ship_hit()
-                break
     
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group"""
@@ -212,6 +206,15 @@ class AlienInvasion:
         alien.rect.y = alien.y
         self.aliens.add(alien)
     
+    def _check_aliens_bottom(self):
+        """Check if any aliens have reached the bottom of the screen"""
+        screen_rect = self.screen.get_rect()
+        for alien in self.aliens.sprites():
+            if alien.rect.bottom >= screen_rect.bottom:
+                # Treat the case the same way as if the ship got hit
+                self._ship_hit()
+                break
+            
     def _check_fleet_edges(self):
         """Responding to every alien that reaches the edge"""
         for alien in self.aliens.sprites():
@@ -257,6 +260,8 @@ class AlienInvasion:
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
         self.ship.blitme()
+
+        self.sb.show_score()
         
         # Draw the button if the game is inactive
         if not self.stats.game_active:

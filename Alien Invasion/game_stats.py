@@ -11,6 +11,7 @@ class GameStats:
     def reset_stats(self):
         """reset the statistics"""
         self.ships_left = self.settings.ship_limit
+        self.score = 0
 
         self.fleet_count = 0
 
