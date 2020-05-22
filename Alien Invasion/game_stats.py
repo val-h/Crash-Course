@@ -7,6 +7,9 @@ class GameStats:
 
         # Start the game in an active state
         self.game_active = False
+
+        # High score
+        self.high_score = 0
     
     def reset_stats(self):
         """reset the statistics"""
