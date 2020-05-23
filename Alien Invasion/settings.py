@@ -36,7 +36,7 @@ class Settings:
         self.speedup_scale = 1.1
 
         # Alien points
-        self.score_scale = 1.2
+        self.score_scale = 2
         
         self.initialize_dynamic_settings()
 
@@ -60,5 +60,3 @@ class Settings:
         self.alien_speed *= self.speedup_scale
 
         self.alien_points = int(self.alien_points * self.score_scale)
-        # Printing a message every time we reach a new level
-        print(f'New level... Score - {self.alien_points}')

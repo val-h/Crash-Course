@@ -1,5 +1,6 @@
 import sys
 from time import sleep
+import json
 
 import pygame
 
@@ -59,6 +60,7 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 print('Quiting Alien Invasion...')
+                self.stats.update_highscore()
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
@@ -84,6 +86,7 @@ class AlienInvasion:
         # Game Interface
         if event.key == self.settings.kb_quit:
             print('Quiting Alien Invasion...')
+            self.stats.update_highscore()
             sys.exit()
         
         if event.key == self.settings.kb_show_stats:
@@ -104,6 +107,8 @@ class AlienInvasion:
             self.stats.reset_stats()
             self.stats.game_active = True
             self.sb.prep_score()
+            self.sb.prep_level()
+            self.sb.prep_ships()
 
             # Reset the game settings
             self.settings.initialize_dynamic_settings()
@@ -123,8 +128,9 @@ class AlienInvasion:
         """Respond to the ship being hit by aliens"""
         
         if self.stats.ships_left > 0:
-            # Decrement the ships left
+            # Decrement the ships left and update the scoreboard
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
 
             # Remove all of the bullets and aliens
             self.aliens.empty()
@@ -183,6 +189,10 @@ class AlienInvasion:
             print('Round won!')
             self._create_fleet()
             self.settings.increase_speed()
+
+            # Increase level
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _create_fleet(self):
         """Create the fleet of aliens."""
