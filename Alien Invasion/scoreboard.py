@@ -1,7 +1,7 @@
 import pygame.font
 from pygame.sprite import Group
 
-from ship import Ship
+from ship import UIShip
 
 class Scoreboard:
     """A class to represent the scoreboard ui in the game"""
@@ -66,7 +66,7 @@ class Scoreboard:
         """Show how many ships are left"""
         self.ships = Group()
         for ship_number in range(self.stats.ships_left):
-            ship = Ship(self.ai_game)
+            ship = UIShip(self.ai_game)
             ship.rect.x = 10 + ship_number * ship.rect.width * 1.25
             ship.rect.y = 10
             self.ships.add(ship)

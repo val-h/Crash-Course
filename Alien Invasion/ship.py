@@ -1,18 +1,17 @@
 import pygame
 from pygame.sprite import Sprite
 
-class Ship(Sprite):
+class Ship():
     """Creating a ship with functions to manage it."""
 
     def __init__(self, ai_game):
         """Creating the ship and manage its possition."""
-        super().__init__()
         self.screen = ai_game.screen
         self.screen_rect = ai_game.screen.get_rect()
         self.settings = ai_game.settings
 
         # Load the ship image and get its rect
-        self.image = pygame.image.load('Alien Invasion\\images\\ship_3.png')
+        self.image = pygame.image.load('Alien Invasion\\images\\ship_x2.png')
         self.rect = self.image.get_rect()
         
         # Start each new ship at the bottom center of the screen
@@ -42,3 +41,14 @@ class Ship(Sprite):
             self.x -= self.settings.ship_speed
 
         self.rect.x = self.x
+
+class UIShip(Sprite):
+    """Creating a smaller ship for the UI"""
+
+    def __init__(self, ai_game):
+        super().__init__()
+        self.screen = ai_game.screen
+
+        # Image
+        self.image = pygame.image.load('Alien Invasion\\images\\ship.png')
+        self.rect = self.image.get_rect()
