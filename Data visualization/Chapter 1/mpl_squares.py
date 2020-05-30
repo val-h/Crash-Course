@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 
-squares = [1, 4, 9, 16 , 25]
+input_values = [1, 2, 3, 4, 5]
+squares = [1, 4, 9, 16, 25]
 
+plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(squares, linewidth=3)
+ax.plot(input_values, squares, linewidth=3)
 
 # Set the chart title and axes
 ax.set_title('Square numbers', fontsize=24)
