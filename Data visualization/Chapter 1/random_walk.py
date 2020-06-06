@@ -18,15 +18,8 @@ class RandomWalk:
         """Calculate all the points in the walk"""
         # Set the maximum movement
         while len(self.x) < self.num_points:
-            # x steps calculation
-            x_direction = choice([1, -1])
-            x_distance = choice([0, 1, 2, 3, 4])
-            x_step = x_direction * x_distance
-
-            # y steps calculation
-            y_direction = choice([1, -1])
-            y_distance = choice([0, 1, 2, 3, 4])
-            y_step = y_direction * y_distance
+            x_step = self._generate_step()
+            y_step = self._generate_step()
 
             # reject steps that go nowhere
             if x_step == 0 and y_step == 0:
@@ -39,3 +32,11 @@ class RandomWalk:
             # add the steps to their lists
             self.x.append(x)
             self.y.append(y)
+    
+    def _generate_step(self):
+        """Helper method for generating the x step"""
+
+        direction = choice([1, -1])
+        distance = choice([0, 1, 2, 3, 4])
+        step = direction * distance
+        return step
