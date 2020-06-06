@@ -3,7 +3,7 @@ from random import choice
 class RandomWalk:
     """A class to generate random walks"""
 
-    def __init__(self, num_points):
+    def __init__(self, num_points=5000):
         """
         Attributes required for the walk: 'steps' variable for the count
         and 2 lists to store the x, y coordinates of each step

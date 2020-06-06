@@ -12,7 +12,7 @@ def visualize_walk(walk_steps):
     rw.fill_walk()
 
     # creating the figure and scattering the steps on the plot
-    fig, ax = plt.subplots(figsize=(15, 9), dpi=128)
+    fig, ax = plt.subplots(figsize=(14, 8), dpi=128)
     
     ordered_steps = range(walk_steps)
     ax.scatter(rw.x, rw.y, s=5, c=ordered_steps, cmap=plt.cm.Blues, edgecolors='none', label='Steps(lighter - beginning, darker-end')
