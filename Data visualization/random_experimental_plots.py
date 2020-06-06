@@ -13,6 +13,10 @@ def square_cubic_plot():
 
     # Ploting the data using a loop, not using numpy
     for i in a:
+
+        # P.S. just now i continued to read from the book and the first thing
+        # was... Colormaps... well yeah, at least this is what i came up with
+        # on my own!
         color = i * 0.03 + 0.1
         size = i * 0.25 + 50 
         
@@ -31,4 +35,7 @@ def square_cubic_plot():
 
     plt.show()
 
+
+
+# Run the desired function here
 square_cubic_plot()
