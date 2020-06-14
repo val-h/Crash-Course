@@ -15,11 +15,13 @@ def visualize_walk(walk_steps):
     fig, ax = plt.subplots(figsize=(14, 8), dpi=128)
     
     ordered_steps = range(walk_steps)
-    ax.scatter(rw.x, rw.y, s=5, c=ordered_steps, cmap=plt.cm.Blues, edgecolors='none', label='Steps(lighter - beginning, darker-end')
+    ax.scatter(rw.x, rw.y, s=5, c=ordered_steps, cmap=plt.cm.Blues,
+     edgecolors='none', label='Steps(lighter - beginning, darker-end')
     
     #Emphasize the first and last point
     ax.scatter(0, 0, c='green', s=50, edgecolors='none', label='Start')
-    ax.scatter(rw.x[-1], rw.y[-1], c='red', s=50, edgecolors='none', label='Finish')
+    ax.scatter(rw.x[-1], rw.y[-1], c='red', s=50, edgecolors='none',
+     label='Finish')
 
     # Remove the axes
     ax.get_xaxis().set_visible(False)
