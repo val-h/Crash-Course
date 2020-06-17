@@ -30,12 +30,13 @@ with open(filename) as f:
         dates.append(date)
 
 # Creating the visualization
-#TODO - add shading between the 2 lines
+
 plt.style.use('seaborn')
 fig, ax = plt.subplots(figsize=(15, 7), dpi=128)
 
-ax.plot(dates, highs, c='red', label='High temperature')
-ax.plot(dates, lows, c='blue', label='Low temperature')
+ax.plot(dates, highs, c='red', label='High temperature', alpha=0.5)
+ax.plot(dates, lows, c='blue', label='Low temperature', alpha=0.5)
+ax.fill_between(dates, highs, lows, facecolor='purple', alpha=0.2)
 
 ax.set_title('Daily high and low temperatures, Sitka AK, 2018', fontsize=26)
 ax.set_xlabel('Date', fontsize=16)
