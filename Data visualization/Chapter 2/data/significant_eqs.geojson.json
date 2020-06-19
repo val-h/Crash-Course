@@ -1,0 +1,381 @@
+{
+    "type": "FeatureCollection",
+    "metadata": {
+        "generated": 1592594553000,
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+        "title": "USGS Significant Earthquakes, Past Month",
+        "status": 200,
+        "api": "1.10.0",
+        "count": 9
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 7.4,
+                "place": "south of the Kermadec Islands",
+                "time": 1592484593747,
+                "updated": 1592571341926,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ae4n",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000ae4n.geojson",
+                "felt": 46,
+                "cdi": 6.6,
+                "mmi": 7.131,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 1,
+                "sig": 873,
+                "net": "us",
+                "code": "6000ae4n",
+                "ids": ",at00qc4gz1,pt20170001,us6000ae4n,",
+                "sources": ",at,pt,us,",
+                "types": ",dyfi,general-text,impact-link,losspager,moment-tensor,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 4.037,
+                "rms": 0.81,
+                "gap": 23,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 7.4 - south of the Kermadec Islands"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -177.8383,
+                    -33.2938,
+                    10
+                ]
+            },
+            "id": "us6000ae4n"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 3.36,
+                "place": "8km NE of Alum Rock, CA",
+                "time": 1592415302600,
+                "updated": 1592594229362,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc73410846",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc73410846.geojson",
+                "felt": 4201,
+                "cdi": 4.8,
+                "mmi": 4.05,
+                "alert": null,
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 654,
+                "net": "nc",
+                "code": "73410846",
+                "ids": ",nc73410846,us6000adln,",
+                "sources": ",nc,us,",
+                "types": ",dyfi,focal-mechanism,moment-tensor,nearby-cities,origin,phase-data,scitech-link,shakemap,",
+                "nst": 183,
+                "dmin": 0.04136,
+                "rms": 0.09,
+                "gap": 30,
+                "magType": "mw",
+                "type": "earthquake",
+                "title": "M 3.4 - 8km NE of Alum Rock, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.7625,
+                    37.414,
+                    8.23
+                ]
+            },
+            "id": "nc73410846"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.1,
+                "place": "10 km NNE of Bhach?u, India",
+                "time": 1592145788290,
+                "updated": 1592500322647,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000abp7",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000abp7.geojson",
+                "felt": 434,
+                "cdi": 5.4,
+                "mmi": 6.697,
+                "alert": "yellow",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 884,
+                "net": "us",
+                "code": "6000abp7",
+                "ids": ",us6000abp7,",
+                "sources": ",us,",
+                "types": ",dyfi,losspager,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 11.175,
+                "rms": 0.65,
+                "gap": 40,
+                "magType": "mb",
+                "type": "earthquake",
+                "title": "M 5.1 - 10 km NNE of Bhach?u, India"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    70.3817,
+                    23.3871,
+                    10
+                ]
+            },
+            "id": "us6000abp7"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 6.6,
+                "place": "135 km WNW of Naze, Japan",
+                "time": 1592063483368,
+                "updated": 1592430579414,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000abcq",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000abcq.geojson",
+                "felt": 136,
+                "cdi": 4.6,
+                "mmi": 4.377,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 1,
+                "sig": 733,
+                "net": "us",
+                "code": "6000abcq",
+                "ids": ",at00qbvg1n,pt20165054,us6000abcq,",
+                "sources": ",at,pt,us,",
+                "types": ",dyfi,ground-failure,impact-link,losspager,moment-tensor,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 2.094,
+                "rms": 0.99,
+                "gap": 30,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 6.6 - 135 km WNW of Naze, Japan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    128.2621,
+                    28.9386,
+                    159.62
+                ]
+            },
+            "id": "us6000abcq"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.8,
+                "place": "56 km ENE of Mohr, Iran",
+                "time": 1591723094057,
+                "updated": 1591969120136,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000a8nh",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000a8nh.geojson",
+                "felt": 15,
+                "cdi": 7.3,
+                "mmi": 7.113,
+                "alert": "yellow",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 661,
+                "net": "us",
+                "code": "6000a8nh",
+                "ids": ",us6000a8nh,",
+                "sources": ",us,",
+                "types": ",dyfi,losspager,moment-tensor,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 3.714,
+                "rms": 0.84,
+                "gap": 21,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 5.8 - 56 km ENE of Mohr, Iran"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    53.4265,
+                    27.7105,
+                    10
+                ]
+            },
+            "id": "us6000a8nh"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.5,
+                "place": "51 km ENE of Mohr, Iran",
+                "time": 1591718930970,
+                "updated": 1592340008490,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000a8lw",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000a8lw.geojson",
+                "felt": 8,
+                "cdi": 4.6,
+                "mmi": 6.832,
+                "alert": "yellow",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 654,
+                "net": "us",
+                "code": "6000a8lw",
+                "ids": ",us6000a8lw,",
+                "sources": ",us,",
+                "types": ",dyfi,losspager,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 3.803,
+                "rms": 0.75,
+                "gap": 73,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 5.5 - 51 km ENE of Mohr, Iran"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    53.3446,
+                    27.7645,
+                    10
+                ]
+            },
+            "id": "us6000a8lw"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 6.4,
+                "place": "134 km NNE of Tobelo, Indonesia",
+                "time": 1591260579782,
+                "updated": 1591382921040,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000a5r3",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000a5r3.geojson",
+                "felt": 10,
+                "cdi": 5,
+                "mmi": 5.191,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 1,
+                "sig": 635,
+                "net": "us",
+                "code": "6000a5r3",
+                "ids": ",pt20156001,at00qbe8it,us6000a5r3,",
+                "sources": ",pt,at,us,",
+                "types": ",dyfi,ground-failure,impact-link,losspager,moment-tensor,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 2.311,
+                "rms": 0.99,
+                "gap": 20,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 6.4 - 134 km NNE of Tobelo, Indonesia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    128.2477,
+                    2.9231,
+                    106.86
+                ]
+            },
+            "id": "us6000a5r3"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.53,
+                "place": "17km S of Searles Valley, CA",
+                "time": 1591234331140,
+                "updated": 1592548119356,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci39462536",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39462536.geojson",
+                "felt": 15467,
+                "cdi": 9.1,
+                "mmi": 7.96,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 1,
+                "sig": 1380,
+                "net": "ci",
+                "code": "39462536",
+                "ids": ",ci39462536,at00qbdo9m,us6000a5le,",
+                "sources": ",ci,at,us,",
+                "types": ",dyfi,focal-mechanism,ground-failure,impact-link,losspager,moment-tensor,nearby-cities,origin,phase-data,scitech-link,shake-alert,shakemap,",
+                "nst": 85,
+                "dmin": 0.0396,
+                "rms": 0.21,
+                "gap": 45,
+                "magType": "mw",
+                "type": "earthquake",
+                "title": "M 5.5 - 17km S of Searles Valley, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.4281667,
+                    35.6148333,
+                    8.44
+                ]
+            },
+            "id": "ci39462536"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 6.8,
+                "place": "48 km SSW of San Pedro de Atacama, Chile",
+                "time": 1591169734844,
+                "updated": 1592516192927,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000a4yi",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000a4yi.geojson",
+                "felt": 210,
+                "cdi": 5.9,
+                "mmi": 6.463,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 1,
+                "sig": 835,
+                "net": "us",
+                "code": "6000a4yi",
+                "ids": ",at00qbcaf9,pt20155000,us6000a4yi,",
+                "sources": ",at,pt,us,",
+                "types": ",dyfi,ground-failure,impact-link,losspager,moment-tensor,origin,phase-data,shakemap,",
+                "nst": null,
+                "dmin": 1.211,
+                "rms": 1.38,
+                "gap": 21,
+                "magType": "mww",
+                "type": "earthquake",
+                "title": "M 6.8 - 48 km SSW of San Pedro de Atacama, Chile"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -68.4217,
+                    -23.2955,
+                    96.84
+                ]
+            },
+            "id": "us6000a4yi"
+        }
+    ],
+    "bbox": [
+        -177.8383,
+        -33.2938,
+        8.23,
+        128.2621,
+        37.414,
+        159.62
+    ]
+}
