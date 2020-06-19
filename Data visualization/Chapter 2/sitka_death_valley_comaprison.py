@@ -83,6 +83,13 @@ ax.plot(dv_dates, dv_highs, c='red', alpha=0.6, label='Death Valley Highs')
 ax.plot(dv_dates, dv_lows, c='blue', alpha=0.4, label='Death Valley Lows')
 ax.fill_between(dv_dates, dv_highs, dv_lows, facecolor='purple', alpha=0.2)
 
+# Styling
+ax.set_title('Comparison between Sitka and Death Valley by daily temperature, 2018', fontsize=22)
+ax.set_xlabel('Dates', fontsize=14)
+ax.set_ylabel('Temperature (F)', fontsize=14)
+ax.tick_params(axis='both', which='major', labelsize=16)
+fig.autofmt_xdate()
+
 plt.legend()
 plt.show()
 
