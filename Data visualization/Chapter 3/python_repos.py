@@ -1,5 +1,4 @@
 import requests
-import json
 
 # Create the request object and print the data
 url = 'https://api.github.com/search/repositories?q=language:python&sort:stars'
@@ -16,7 +15,7 @@ repo_dicts = response_dict['items']
 print(f'Total repos returned: {len(repo_dicts)}')
 
 # Examine the information about the returned repositories 
-print(f'\nSelected information about the first repository:')
+print(f'\nSelected information about each repository:')
 for repo_dict in repo_dicts:
     print(f'\nName - {repo_dict["name"]}')
     print(f'Owner - {repo_dict["owner"]["login"]}')
