@@ -4,7 +4,8 @@ from plotly.graph_objs import Bar
 from plotly import offline
 
 # Make API call to github about the top Python repositories(by stars)
-url = 'https://api.github.com/search/repositories?q=language:python&sort:stars'
+language = 'python'
+url = f'https://api.github.com/search/repositories?q=language:{language}&sort:stars'
 headers = {'Accepted': 'application/vnd.github.v3+json'} # Specifying the api version
 r = requests.get(url, headers=headers) # Assign the request object
 print(r.status_code) # 200 - accepted, check mozilla http request codes
