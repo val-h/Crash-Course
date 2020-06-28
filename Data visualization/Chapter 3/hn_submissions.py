@@ -13,6 +13,7 @@ print('Top stories request - Status code:', r.status_code)
 submission_ids = r.json()
 submission_dicts = []
 
+print('\nSubmissions')
 for submission_id in submission_ids[:30]:
     # Make a seperate call for each submission
     url = f'https://hacker-news.firebaseio.com/v0/item/{submission_id}.json'
