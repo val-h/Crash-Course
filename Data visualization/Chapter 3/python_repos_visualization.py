@@ -8,7 +8,7 @@ language = 'python'
 url = f'https://api.github.com/search/repositories?q=language:{language}&sort:stars'
 headers = {'Accepted': 'application/vnd.github.v3+json'} # Specifying the api version
 r = requests.get(url, headers=headers) # Assign the request object
-print(r.status_code) # 200 - accepted, check mozilla http request codes
+print('Status code: ', r.status_code) # 200 - accepted, check mozilla http request codes
 
 # Process results
 response_dict = r.json() # Loads the variable with the data 
@@ -60,4 +60,4 @@ cst_layout = {
 }
 
 figure = {'data': data, 'layout': cst_layout}
-offline.plot(figure, filename='Data visualization\\python_top_repos.html')
+offline.plot(figure, filename='python_top_repos.html')
